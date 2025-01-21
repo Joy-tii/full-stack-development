@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Day2</title>
+    <style>
+        body{
+            padding: 0 px;
+            margin: 0;
+           
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        table {
+            width: 70%;
+            margin-bottom: 20px;
+        }
+
+        
+        td {
+            border: 2px solid rgb(17, 2, 74);
+        }
+        h1{
+            text-align: center;
+            background-color: aquamarine;
+            padding: 10px;
+           
+
+        }
+
+        th{
+            padding: 10px;
+            background-color: bisque;
+        }
+
+        td{
+            box-sizing: content-box;
+            padding: 10px;
+            background-color: rgb(248, 246, 243);
+        }
+        
+h2{
+   text-align: center;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Practice Day-2</h1>
+    <h2>Table for Data Types</h2>
+    <div>
+      
+        <table>
+            <tr>
+                <th>Data Types</th>
+                <th>JavaScript Code</th>
+                <th>Console</th>
+    
+            </tr>
+    
+            <tr>
+                <th>Numbers</th>
+                <td>var a = 10;<br>
+                    console.log("this is ", a);<br>
+                    console.log(typeof a);</td>
+                <td>
+                    this is 10 <br>
+                    number<br>
+                </td>
+            </tr>
+            <tr>
+                <th>Strings
+                </th>
+                <td>var x = "jyoti";<br>
+                    console.log("This is ",x);<br>
+                    console.log(typeof x);</td>
+    
+                <td>This is jyoti<br>
+                    string</td>
+            </tr>
+            <tr>
+                <th>Boolean</th>
+                <td>let isStudent = true;<br>
+                    console.log(isStudent);<br>
+                    console.log(typeof isStudent);</td>
+                <td>true<br>
+                    boolean</td>
+            </tr>
+            <tr>
+                <th>Undifined</th>
+                <td>let mark;<br>
+                    console.log(mark);<br>
+                    console.log(typeof mark)</td>
+                <td>undefined<br>
+                    undefined</td>
+    
+            </tr>
+    
+            <tr>
+                <th>Null</th>
+                <td>let marks = null; <br>
+                    console.log(marks); <br>
+                    console.log(typeof marks)</td>
+                <td>null<br>
+                    object</td>
+            </tr>
+    
+            <tr>
+                <th>Symbol</th>
+                <td>
+                    let sym = Symbol("id"); <br>
+                    console.log(sym); <br>
+                    console.log(typeof sym); <br>
+                </td>
+                <td>Symbol(id)<br>
+                    symbol</td>
+            </tr>
+    
+            <tr>
+                <th>Bigint</th>
+                <td>let bigInt = 112334445566899087746353526328349745955647443n;<br>
+                    console.log(bigInt);<br>
+                    console.log(typeof bigInt);</td>
+                    <td>112334445566899087746353526328349745955647443n<br>
+                        bigint</td>
+            </tr>
+    
+        </table>
+    </div>
+    <script src="./datatype.js"></script>
+</body>
+
+</html>
