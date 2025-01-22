@@ -53,7 +53,7 @@ a:hover{
    align-items: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     .intro {
         display: flex;
         flex-direction: column;
@@ -70,7 +70,7 @@ a:hover{
     height: 100%;
    
 }
-@media (max-width: 700px) {
+@media (max-width: 500px) {
     .pintro {
       font-size: 10px;
     }
