@@ -26,7 +26,12 @@ console.log(typeof sym);
 
 let bigInt = 112334445566899087746353526328349745955647443n;
 console.log(bigInt);
-console.log(typeof bigInt)
+console.log(typeof bigInt);
+
+function fun(){
+    
+};
+console.log(typeof fun);
 
 
 

@@ -1,0 +1,107 @@
+.main-head {
+    background-image: url("./../asset/Desktop\ -\ 19.png");
+    width: 100%;
+    height:1080px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1 {
+    background: linear-gradient(90deg, rgba(91, 227, 61, 0.66) 0%, #D4DDD3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Montserrat;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+h2 {
+    color: #FFA600;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+h3 {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+img {
+    width: 176px;
+    height: 176px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(27, 249, 2, 0.25);
+
+
+}
+
+.intro {
+    display: flex;
+    width: 70%;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(249, 187, 2, 0.25);
+
+}
+
+.my-image {
+    width: 30%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
+
+
+}
+
+.my-intro {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+
+}
+
+.main-section{
+    background-image: url("./../asset/Desktop\ -\ 17.png");
+    width: 100%;
+    height: 1080px;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-content{
+    width: 50%;
+ background-color: #fba505;
+ padding: 10px;
+ margin: 40px;
+ border: 2px solid white;
+ box-shadow: 0px 4px 4px 0px rgba(249, 249, 248, 0.25);
+}
+button{
+    background-color: rgb(47, 113, 52);
+    color: #FFF;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+}

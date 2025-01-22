@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day2 Practice of js</title>
+    <link rel="stylesheet" href="./day2.css">
+</head>
+<body>
+    <script src="./day2.js"></script>
+<h1>Understanding var, let, and const in JavaScript</h1>
+<nav>
+    <a href="#var">Var</a>
+    <a href="#let">Let</a>
+    <a href="#const">Const</a>
+    <a href="#conc">Conclusion</a>
+</nav>
+<div class="main-section">
+    <h2>Introduction</h2>
+<div class="intro">
+   
+
+<div class="image"><img src="./../../asset/let-var-const.png" alt="image" style="width: 300px; height: 150px;"></div>
+   <div class="pintro" > <b>JavaScript is a powerful and flexible programming language. One of the essential concepts to understand as a JavaScript developer is how to declare variables. With the introduction of ES6 (ECMAScript 2015), JavaScript introduced two new ways of declaring variables: let and const, alongside the traditional var.
+
+    In this blog, we’ll explore the differences between these three and understand when to use each one.</b></div>
+</div>
+
+<div class="main" id="var">
+    <h2>1. The Classic var
+    </h2>
+    <p>var is the original way of declaring variables in JavaScript. However, it comes with some quirks that can lead to unintended behavior.</p>
+
+    <h3>Key Features of var:</h3>
+
+    <ul>
+        <li ><b class="b-li">Function Scope:</b> Variables declared with var are scoped to the nearest function. If declared outside any function, they are global.
+        </li>
+        <li ><b class="b-li">Hoisting:</b> Variables declared with var are hoisted to the top of their scope and initialized as undefined. This means you can use the variable even before declaring it.
+        </li>
+        <li><b class="b-li">No Block Scope:</b> var doesn’t recognize block-level scope (e.g., within if or for blocks).</li>
+    </ul>
+
+  
+
+    <div class="example">
+
+
+        <div class="exm-main">
+            <h3>Example:</h3><br>
+            var X = 45;<br>
+            console.log("I am Outside X" , X);<br>
+             var X = 78;<br>
+           console.log("I am Outside X" , X);<br>
+          
+           let demoFunction = function(){<br>
+              console.log("I am Inside X",X);<br>
+          }<br>
+          
+           demoFunction();</div>
+
+           <div class="exm-console">
+            <h4>Console</h4>
+            I am Outside X 45 <br>
+            I am Outside X 78 <br>
+            I am Inside X 78</div>
+    </div>
+</div>
+
+<br>
+
+<div class="main" id="let">
+    <h2>2. Introducing let
+
+    </h2>
+    <p>With ES6, let was introduced to address the limitations of var.
+
+    </p>
+
+    <h3>Key Features of var:</h3>
+
+    <ul>
+        <li ><b class="b-li">Block Scope: </b> Variables declared with let are limited to the block in which they are defined.
+        </li>
+        <li ><b class="b-li"> No Hoisting:</b>  While let variables are technically hoisted, they are not initialized, and accessing them before declaration results in a ReferenceError.
+        </li>
+        <li><b class="b-li">Reassignable:</b>You can reassign values to variables declared with let.</li>
+    </ul>
+
+  
+
+    <div class="example">
+
+
+        <div class="exm-main">
+            <h3>Example:</h3><br>
+           
+let x = 45;<br>
+console.log("I am outside X", x);<br>
+// let x = 30; <b>Uncaught SyntaxError: Identifier 'x' has already been declared</b>  <br>
+let demoFunction = function(){<br>
+         console.log("I am Inside X",x);<br>
+     }<br>
+
+
+     demoFunction();</div>
+
+           <div class="exm-console">
+            <h4>Console</h4>
+            I am outside X 45 <br>
+             I am Inside X 45</div>
+    </div>
+</div>
+
+
+<br>
+
+<div class="main" id="const">
+    <h2>3. The Immutable const
+
+
+    </h2>
+    <p>const is another addition to JavaScript from ES6. It’s used to declare variables that should never be reassigned.
+
+
+
+    </p>
+
+    <h3>Key Features of var:</h3>
+
+    <ul>
+        <li ><b class="b-li">Block Scope: </b> Like let, const variables are block-scoped.
+
+        </li>
+        <li ><b class="b-li">Immutable References:</b> You cannot reassign a new value to a const variable. However, the content of objects or arrays declared with const can still be modified.
+        </li>
+        <li><b class="b-li">No Hoisting: </b>Similar to let, accessing a const variable before declaration results in a ReferenceError.</li>
+    </ul>
+
+  
+
+    <div class="example">
+
+
+        <div class="exm-main">
+            <h3>Example:</h3><br>
+           
+            const x = 45; <br>
+            console.log("I am outside X", x);<br>
+             //const x = 30;  <b>//Uncaught SyntaxError: Identifier 'x' has already been declared</b> <br>
+             //x=30; <b>Uncaught TypeError: Assignment to constant variable.</b><br>
+            let demoFunction = function(){<br>
+                     console.log("I am Inside X",x);<br>
+                 }
+                 <br>
+            
+                 demoFunction();
+            </div>
+
+           <div class="exm-console">
+            <h4>Console</h4>
+            I am outside X 45<br>
+            I am Inside X 45
+            </div>
+    </div>
+</div>
+
+<div id="conc">
+    <h2>Conclusion
+    </h2>
+    <p>Understanding the differences between var, let, and const is crucial for writing clean, modern JavaScript. With let and const, JavaScript has become more robust and less prone to bugs caused by scoping issues. By following best practices, you can write code that’s easier to understand and maintain.
+
+        Happy coding! 🎉</p>
+</div>
+</div>
+
+<footer><footer>
+    <p>© 2024 Blogs on  | var, let, and const in JavaScript Designed by Jyoti Kumari</p>
+</footer></footer>
+</body>
+</html>
