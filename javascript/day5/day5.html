@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in JavaScript</title>
+    <link rel="stylesheet" href="./day5.css">
+</head>
+
+<body>
+    <h1>
+        Understanding Loops in JavaScript</h1>
+
+    <nav>
+        <a href="#for"> for Loop</a>
+        <a href="#while">while Loop</a>
+        <a href="#do">do-while Loop</a>
+        <a href="#question">Practice Quesation</a>
+
+
+    </nav>
+    <div class="main">
+
+        <h2>Introduction</h2>
+        <p>
+            In programming, loops are essential when you need to repeat a block of code multiple times. JavaScript
+            provides
+            several looping mechanisms to iterate through data or execute tasks repeatedly until a condition is met.
+
+            Let’s dive into the types of loops available in JavaScript and their use cases.
+        </p>
+
+        <h2>1. for Loop</h2>
+        <p> The for loop is one of the most commonly used loops in JavaScript. It is ideal for running a block of code a
+            specific number of times.
+        </p>
+
+        <div class="main-container" id="for">
+
+            <div class="Syntax">
+                <h4>Syntax:
+                </h4>
+                for (initialization; condition; increment/decrement) { <br>
+                // Code to be executed<br>
+                }
+
+
+
+
+            </div>
+            <div class="example">
+                <h3>Example</h3>
+                for (let i = 0; i &lt; 5; i++) {<br>
+                console.log("Iteration:", i);<br>
+                }
+
+
+
+            </div>
+            <div class="output">
+
+                <h5>Output:</h5>
+                <p>Iteration: 0 <br>
+                    Iteration: 1<br>
+                    Iteration: 2<br>
+                    Iteration: 3<br>
+                    Iteration: 4<br>
+
+
+                </p>
+            </div>
+
+
+        </div>
+
+        <div>
+
+            <h5>Explanation:</h5>
+            <p> 1: Initialization: let i = 0 initializes the counter. <br>
+                2: Condition: i &lt; 5 checks if the loop should continue.<br>
+                3: Increment/Decrement: i++ increases the counter after each iteration.
+                <br>
+
+            </p>
+        </div>
+
+
+
+        <h2>2. while Loop
+        </h2>
+        <p> The while loop runs as long as a specified condition is true. Use it when the number of iterations is not
+            fixed.
+
+
+        </p>
+
+        <div class="main-container" id="while">
+
+            <div class="Syntax">
+                <h4>Syntax:
+                </h4>
+                while (condition) { <br>
+                // Code to be executed <br>
+                }
+
+
+
+
+
+            </div>
+            <div class="example">
+                <h3>Example</h3>
+                let i = 0; <br>
+
+                while (i &lt; 5) { <br>
+                console.log("Iteration:", i); <br>
+                i++; <br>
+                }
+
+
+
+
+            </div>
+            <div class="output">
+
+                <h5>Output:</h5>
+                <p>Iteration: 0 <br>
+                    Iteration: 1<br>
+                    Iteration: 2<br>
+                    Iteration: 3<br>
+                    Iteration: 4<br>
+
+
+                </p>
+            </div>
+
+
+        </div>
+
+        <div>
+
+            <h5>Explanation:</h5>
+            <p> The loop continues until the condition i &lt; 5 becomes false.
+
+            </p>
+        </div>
+
+        <h2>3. do-while Loop
+
+        </h2>
+        <p> The do-while loop is similar to the while loop, but it executes the code block at least once, even if the
+            condition is false.
+
+
+        </p>
+
+        <div class="main-container" id="do">
+
+            <div class="Syntax">
+                <h4>Syntax:
+                </h4>
+                do {
+                // Code to be executed
+                } while (condition);
+
+            </div>
+            <div class="example">
+                <h3>Example</h3>
+                let i = 0;
+
+                do {
+                console.log("Iteration:", i);
+                i++;
+                } while (i &lt; 5);
+
+
+
+
+
+            </div>
+            <div class="output">
+
+                <h5>Output:</h5>
+                <p>Iteration: 0 <br>
+                    Iteration: 1<br>
+                    Iteration: 2<br>
+                    Iteration: 3<br>
+                    Iteration: 4<br>
+
+
+                </p>
+            </div>
+
+
+        </div>
+
+        <div>
+
+            <h5>Explanation:</h5>
+            <p> Key Difference: If the condition is false from the beginning, the code block inside the do statement
+                will
+                still execute once.
+
+
+            </p>
+        </div>
+        <h2>Practice Quesation:</h2>
+        <div class="pq">
+
+            <p><b>1: write a program to generate even no. from 1 to 100.</b></p>
+            <div>
+                <h3>Solution:</h3>
+                for(let i=1; i&lt;=100; i++){ <br>
+                if (i % 2 === 0){<br>
+                console.log(i);<br>
+                }<br>
+                }<br>
+            </div>
+        </div>
+
+        <div class="pq">
+
+            <p><b>2: Write a program for table of two.</b></p>
+            <div>
+                <h3>Solution:</h3>
+                for( let i=1; i&lt;=10; i++){ <br>
+                    console.log(2*i)<br>
+                }
+            </div>
+        </div>
+
+
+        <div class="pq">
+
+            <p><b>3:  write a game where you start with any random game number.  Ask the user to keep guessing the game number until the user enters the correct value. 
+            </b></p>
+            <div>
+                <h3>Solution:</h3>
+                soon..
+            </div>
+        </div>
+        
+
+    </div>
+
+    <footer>
+        <p>© 2024 Blogs on | loops in JavaScript Designed by Jyoti Kumari</p>
+    </footer>
+
+    <script src="./day5.js"></script>
+</body>
+
+</html>

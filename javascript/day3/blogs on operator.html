@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4- Operator</title>
+    <link rel="stylesheet" href="./day3.css">
+</head>
+
+<body>
+    <h1>Understanding Operators and Their Types in JavaScript</h1>
+
+    <nav>
+        <a href="#arth">Arithmatic Operator</a>
+        <a href="#logic">Logical Operator</a>
+        <a href="#compare">Comparision Operator</a>
+        <a href="#condition">Conditional Statement</a>
+        <a href="#use"> Use Case</a>
+        <a href="#conc">Conclusion</a>
+       
+    </nav>
+
+    <div class="main">
+        <div class="intro">
+            <h2>Introduction</h2>
+            <p>JavaScript, as a versatile programming language, provides a variety of operators to perform different
+                operations like arithmetic, comparison, logical reasoning, and more. Operators are the building blocks
+                that make our code functional and dynamic.
+
+                In this blog, we’ll explore what operators are and the various types of operators in JavaScript with
+                examples</p>
+        </div>
+
+        <div>
+            <h2>Types of Operators in JavaScript
+            </h2>
+            <p>JavaScript provides several types of operators. Let’s go through them one by one:
+
+            </p>
+        </div>
+
+        <div id="arth">
+            <h3>1. Arithmetic Operators
+            </h3>
+            <p>These operators are used to perform mathematical operations.
+
+            </p>
+
+            <div class="main-container">
+                <table>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <th>+</th>
+                        <td>Addition</td>
+                        <td> 10 + 5</td>
+                        <td>15</td>
+                    </tr>
+
+                    <tr>
+
+                        <th>-</th>
+                        <td>Subtraction</td>
+                        <td> 10 - 5</td>
+                        <td>5</td>
+                    </tr>
+
+                    <tr>
+
+                        <th>*</th>
+                        <td>Multiplication</td>
+                        <td> 10 * 5</td>
+                        <td>50</td>
+                    </tr>
+
+                    <tr>
+
+                        <th>/</th>
+                        <td>Division</td>
+                        <td> 10 / 5</td>
+                        <td>2</td>
+                    </tr>
+
+                    <tr>
+
+                        <th>%</th>
+                        <td>Modulus (remainder)</td>
+                        <td>10 % 3</td>
+                        <td>1</td>
+                    </tr>
+
+                    <tr>
+
+                        <th>**</th>
+                        <td>Exponentiation</td>
+                        <td>2 ** 3</td>
+                        <td>8</td>
+                    </tr>
+                </table>
+
+                <div class="example">
+                    <h4>Example:
+                    </h4>
+                    <p>let a = 10, b = 3;<br>
+                        console.log(a + b); // 13 <br>
+                        console.log(a % b); // 1 <br>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="logic">
+            <h3>2. Logical Operators
+            </h3>
+            <p>Logical operators are used to perform logical operations. </p>
+
+            <div class="main-container">
+                <table>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr>
+                        <th>&&</th>
+                        <td>Logical AND</td>
+                        <td> true && false</td>
+                        <td>false</td>
+                    </tr>
+
+                    <tr>
+
+                        <th>||</th>
+                        <td>Logical OR</td>
+                        <td> true || false</td>
+                        <td>true</td>
+                    </tr>
+
+                    <tr>
+
+                        <th>!</th>
+                        <td> Logical NOT</td>
+                        <td> !true</td>
+                        <td>false</td>
+                    </tr>
+
+
+                </table>
+
+                <div class="example">
+                    <h4>Example:
+                    </h4>
+                    <p>
+                        console.log(true && false); // false<br>
+                        console.log(true || false); // true<br>
+                        console.log(!true); // false<br>
+
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="compare">
+            <h3>3. Comparison Operators
+
+            </h3>
+            <p>These are used to compare two values and return a boolean (true or false).
+
+            </p>
+
+            <div class="main-container">
+                <table>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                        <th>Result</th>
+                    </tr>
+
+                    <tr>
+
+                        <th>==</th>
+                        <td> Equal to</td>
+                        <td> 5 == '5'</td>
+                        <td>true</td>
+                    </tr>
+
+                    <tr>
+
+                        <th>===</th>
+                        <td>Strict equal to</td>
+                        <td>5 === '5'</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <th>!=</th>
+                        <td> Not equal to</td>
+                        <td>5 != 3</td>
+                        <td>true</td>
+                    </tr>
+
+                    <tr>
+                        <th>!==</th>
+                        <td>Strict Not equal to</td>
+                        <td>5 !== '5'</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <th>></th>
+                        <td>Greater than</td>
+                        <td>5 > 3</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <th><code>&lt;</code>
+                        </th>
+                        <td> Less than</td>
+                        <td>5&lt; 3</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <th>>=
+                        </th>
+                        <td>Greater than or equal to</td>
+                        <td>5 >= 5</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <th>&lt;=</th>
+                        <td>Less than or equal to</td>
+                        <td>5 &lt;= 4</td>
+                        <td>false</td>
+                    </tr>
+
+                </table>
+
+                <div class="example">
+                    <h4>Example:
+                    </h4>
+                    <p>
+                        console.log(10 > 5); // true <br>
+                        console.log(10 === "10"); // false<br>
+                        let x = 18; <br>
+                        let y = 56;<br>
+                        console.log(x>y);//false<br>
+                        console.log(x&lt;y);//true<br>
+                        console.log(x>=y);//false<br>
+                        console.log(x&lt;=y);true<br>
+
+                    </p>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="condition">
+            <h2>Conditional Statements</h2>
+
+            <p>
+                Conditional statements are fundamental in any programming language. They allow you to make decisions in
+                your code based on specific conditions. In JavaScript, the if, if-else, and else-if statements are
+                essential tools for controlling the flow of your program.
+            </p>
+
+            <h3>1. The if Statement</h3>
+            <p>The if statement is used to execute a block of code only if a specified condition is true.
+
+            </p>
+            <div class="main-container">
+
+
+
+                <div class="Syntax">
+                    <h4>Syntax:
+                    </h4>
+                    if (condition) { <br>
+                    // Code to be executed if the condition is true <br>
+                    }
+
+                </div>
+                <div class="example">
+                    <h3>Example</h3>
+                    let age = 20;<br>
+
+                    if (age >= 18) { <br>
+                    console.log("You are an adult."); <br>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+
+            <h5>Explanation:</h5>
+            <p>In this example, the code inside the if block runs only if age is greater than or equal to 18.
+
+            </p>
+        </div>
+
+        <div>
+
+
+            <h3>2. The if-else Statement
+            </h3>
+            <p>The if-else statement allows you to define an alternative block of code to execute when the condition is
+                false.
+
+            </p>
+            <div class="main-container">
+
+
+
+                <div class="Syntax">
+                    <h4>Syntax:
+                    </h4>
+                    if (condition) { <br>
+                    // Code to be executed if the condition is true<br>
+                    } else {<br>
+                    // Code to be executed if the condition is false<br>
+                    }
+
+
+                </div>
+                <div class="example">
+                    <h3>Example</h3>
+                    let age = 16;<br>
+
+                    if (age >= 18) {<br>
+                    console.log("You are an adult.");<br>
+                    } else {<br>
+                    console.log("You are a minor.");<br>
+                    }
+
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+
+            <h5>Explanation:</h5>
+            <p>If the condition (age >= 18) is false, the code inside the else block is executed.
+            </p>
+        </div>
+
+        <div>
+
+
+            <h3>3. The else-if Statement
+
+            </h3>
+            <p>The else-if statement is used when you need to test multiple conditions. It allows you to chain multiple conditions together.
+
+
+
+            </p>
+            <div class="main-container">
+
+
+
+                <div class="Syntax">
+                    <h4>Syntax:
+                    </h4>
+                    if (condition1) { <br>
+                        // Code to be executed if condition1 is true <br>
+                      } else if (condition2) {<br>
+                        // Code to be executed if condition2 is true<br>
+                      } else {<br>
+                        // Code to be executed if none of the conditions are true<br>
+                      }
+                      
+
+
+                </div>
+                <div class="example">
+                    <h3>Example</h3>
+                    let score = 75; <br>
+
+                    if (score >= 90) {<br>
+                      console.log("Grade: A");<br>
+                    } else if (score >= 75) {<br>
+                      console.log("Grade: B");<br>
+                    } else if (score >= 50) {<br>
+                      console.log("Grade: C");<br>
+                    } else {<br>
+                      console.log("Grade: F");<br>
+                    }
+                    
+
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+
+            <h5>Explanation:</h5>
+            <p> 1: If score >= 90, the first block executes, and the rest are ignored. <br>
+               2:  If score >= 75, the second block executes (only if the first condition is false). <br>
+               3:  If all conditions are false, the code inside the else block executes. <br>
+                
+            </p>
+        </div>
+
+        <div id="use">
+
+
+            <h3>4. Real-World Use Case
+
+
+            </h3>
+            <p>Here’s an example of how conditional statements are used in a simple web application:
+
+
+
+
+            </p>
+            <div class="main-container">
+
+
+
+                <div class="Syntax">
+                    <h4>Example: Login System
+                       
+                        
+                    </h4>
+                    let username = "admin"; <br>
+                    let password = "12345";<br>
+                    
+                    if (username === "admin" && password === "12345") {<br>
+                      console.log("Login successful!");<br>
+                    } else if (username !== "admin") {<br>
+                      console.log("Invalid username.");<br>
+                    } else {<br>
+                      console.log("Incorrect password.");<br>
+                    }
+                    
+                      
+
+
+                </div>
+                <div class="example">
+                    <h3>Output:
+
+                    </h3>
+                   1: If both username and password match, it shows: Login successful! <br>
+                    2: If the username is incorrect: Invalid username. <br>
+                    3: If the password is incorrect: Incorrect password.
+                    
+                </div>
+
+            </div>
+        </div>
+
+       
+<div id="conc">
+    <h2>Conclusion</h2>
+    <p>
+        The if, if-else, and else-if statements are powerful tools in JavaScript for handling conditional logic. By mastering these statements, you can create dynamic, responsive, and functional programs that adapt to various conditions.
+
+Remember:
+
+1: Use if for single conditions.
+2: Use if-else for binary decisions.
+3: Use else-if for multiple conditions.
+    </p>
+</div>
+
+
+    </div>
+
+    <footer>
+        <p>© 2024 Blogs on  | operators and conditional Statement in JavaScript Designed by Jyoti Kumari</p>
+    </footer>
+    <script src="./day3.js"></script>
+</body>
+
+</html>
