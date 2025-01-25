@@ -50,12 +50,21 @@
 //     console.log(2*i)
 // }
 
+var a = parseInt(prompt("Pls enter the number for which you wan for table"));
+var n = 1;
+while(n<=10){
+    console.log(`${a}X${n}=`,2*n);
+    n++;
+}7
+
+
+
 const randomNumber = Math.floor(Math.random() * 100) + 1;
     console.log("Game Number (for testing):", randomNumber); // For debugging
 
     // Function to check the user's guess
     function checkGuess() {
-      const userGuess = Number(document.getElementById("guessInput").value);
+      const userGuess = Number(document.getElementById("guessInput").value) ;
       const feedback = document.getElementById("feedback");
 
       if (!userGuess || userGuess < 1 || userGuess > 100) {
