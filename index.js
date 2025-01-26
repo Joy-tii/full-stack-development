@@ -1,30 +1,16 @@
 
 
-function password(){
-      let password = prompt("Enter a password");
-   
-    if(password.length < 8){
-       console.log("password must be minimum 8 character.");
-       alert("password must be minimum 8 character.");
-    }
-   
-    else if (!/[A-Z]/.test(password)){
-       console.log("Password must have one uppercase .");
-      alert("Password must have one uppercase .");
-       
-    }
-   
-    else if (!/[0-9]/.test(password)){
-       console.log("Password must have one number .");
-       alert("Password must have one number .");
-    }
-    
-    else{
-       console.log("Password created Successfully");
-       alert("Password created Successfully");
-    }
-    }
-    
-   
-   
-   password();
+  // Predefined password
+  const password = "Jyoti@123";
+
+  function checkPassword() {
+      const input = document.getElementById("password-input").value;
+      const error = document.getElementById("password-error");
+
+      if (input === password) {
+          document.getElementById("password-screen").style.display = "none";
+          document.getElementById("content").style.display = "block";
+      } else {
+          error.style.display = "block"; // Show error message
+      }
+  }
