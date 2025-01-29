@@ -1,35 +1,61 @@
-body{
+body {
     margin: 0;
     padding: 0;
-  background-image: url(./../../asset/GALLERY.png);
+    background-image: url(./../../asset/GALLERY.png);
     color: white;
     box-sizing: border-box;
 }
-h1{
+
+h1 {
     text-align: center;
-   font-size: 50px;
-   color:#f7cf7e;
+    font-size: 50px;
+    color: #f7cf7e;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    z-index: 1;
+    box-sizing: border-box;
+    background-color: black;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
 }
-.intro{
+
+.intro {
     padding: 20px;
-    margin: 20px;
+    margin-top: 100px;
     box-sizing: border-box;
 }
-.example{
+
+.example {
     background-color: rgb(255, 255, 255, 0.2);
-padding: 20px;
+    padding: 20px;
+    position: relative;
+    left: 40px;
+  
+    box-shadow: 0px 4px 4px 0px rgba(248, 234, 111, 0.25);
+    border-radius: 5px;
 
 }
-.main-content{
+
+.example:hover {
+
+    border: 1px solid white;
+    box-shadow: 0px 8px 8px 0px rgba(248, 234, 111, 0.25);
+
+
+}
+
+.main-content {
     padding: 20px;
     margin: 20px;
 }
-    
+
 
 footer {
     text-align: center;
     padding: 1em;
-    background: linear-gradient(45deg,  #f7cf7e, rgba(217, 206, 43, 0.39));
+    background: linear-gradient(45deg, #f7cf7e, rgba(217, 206, 43, 0.39));
     color: rgb(60, 57, 57);
     box-sizing: border-box;
     width: 100%;
