@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,7 @@
             justify-content: center;
             align-items: center;
             background-image: url("./asset/Desktop\ -\ 15.png");
-            
+
             z-index: 9999;
         }
 
@@ -44,15 +45,7 @@
             color: #ffffff;
         }
 
-        .password-box input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
+       
         .password-box button {
             background-color: #4CAF50;
             color: white;
@@ -75,19 +68,57 @@
 
         /* Main content styles */
         #content {
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
             padding: 20px;
+        }
+
+        .eye-btn {
+            position: absolute;
+            right: 0px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .eye-btn:hover {
+            color: #333;
+        }
+
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .password-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            padding-right: 40px; /* Space for eye icon */
         }
     </style>
 </head>
+
 <body>
     <!-- Password screen -->
     <div id="password-screen">
         <div class="password-box">
             <h2>Enter Password</h2>
-            <input type="password" id="password-input" placeholder="Enter password">
+            <div class="password-container">
+                <input type="password" id="password-input" placeholder="Enter password">
+                <button class="eye-btn" onclick="togglePassword()">👁</button>
+            </div>
+
             <button onclick="checkPassword()">Submit</button>
             <div id="password-error" class="password-error">Incorrect password. Try again.</div>
+
+            <div style="color: white; margin: 10px;">☆.𓋼𓍊 𓆏 𓍊𓋼𓍊.☆ ⋆౨ৎ˚⟡˖ ࣪</div>
         </div>
     </div>
 
@@ -137,7 +168,8 @@
                 </details>
                 <details>
                     <summary>Day 3</summary>
-                    <a href="./javascript/day3/blogs on operator.html">Blogs on Operators and Conditional Statements in JavaScript</a>
+                    <a href="./javascript/day3/blogs on operator.html">Blogs on Operators and Conditional Statements in
+                        JavaScript</a>
                 </details>
                 <details>
                     <summary>Day 4</summary>
@@ -160,7 +192,8 @@
     </div>
 
     <script src="./index.js">
-      
+
     </script>
 </body>
+
 </html>
