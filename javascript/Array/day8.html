@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in js</title>
+    <link rel="stylesheet" href="./day8.css">
+</head>
+
+<body>
+    <h1>Understanding Arrays in JavaScript</h1>
+
+   
+    <nav>
+        <a href="#intro">Introduction</a>
+        <a href="#create">Creating an Array</a>
+        <a href="#access">Accessing Elements</a>
+        <a href="method">Common Methods</a>
+    </nav>
+    <div class="main">
+
+        <h2> Introduction</h2>
+        <p>Arrays are one of the most important data structures in JavaScript. They allow us to store multiple values in
+            a single variable and perform various operations like sorting, filtering, mapping, and more. In this blog,
+            we’ll explore JavaScript arrays, their methods, and how they are used effectively.</p>
+
+
+        <div class="main-container">
+            <h2>What is an Array in JavaScript?</h2>
+            <p>An array is a special variable that can hold more than one value at a time. Unlike primitive data types
+                (such as numbers or strings), an array allows you to store collections of data under a single name.</p>
+
+            <h3>Example:
+            </h3>
+            <div class="example">let fruits = ["Apple", "Banana", "Cherry"];<br>
+                console.log(fruits); // Output: ["Apple", "Banana", "Cherry"]<br>
+            </div>
+            <p>Here, fruits is an array containing three string elements.</p>
+        </div>
+
+        <div class="main-container">
+            <h2> Creating an Array</h2>
+
+
+            <h3> Using Array Literals (Recommended)
+            </h3>
+            <div class="example">let colors = ["Red", "Green", "Blue"];
+            </div>
+            <h3> Using the new Array() Constructor
+            </h3>
+            <div class="example">let numbers = new Array(10, 20, 30);
+            </div>
+            <p>Note: It’s generally recommended to use array literals ([]) because it's simpler and more readable.</p>
+        </div>
+        <div class="main-container">
+            <h2> Accessing Elements in an Array</h2>
+            <p>Arrays use zero-based indexing, which means the first element is at index 0.
+            </p>
+
+            <h3>Example:
+            </h3>
+            <div class="example">let cities = ["New York", "London", "Paris"];<br>
+                console.log(cities[0]); // Output: New York <br>
+                console.log(cities[1]); // Output: London<br>
+                console.log(cities[2]); // Output: Paris<br>
+            </div>
+            <p>Here, fruits is an array containing three string elements.</p>
+        </div>
+
+        <div class="main-container">
+            <h2> Accessing the Last Array Element</h2>
+          
+    
+            <h3>Example:
+            </h3>
+            <div class="example">const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+                let fruit = fruits[fruits.length - 1];
+            </div>
+           
+        </div>
+    
+            <div class="main-container">
+                <h2>Common Array Methods in JavaScript</h2>
+                <h3>1. Adding and Removing Elements</h3>
+    
+                <table>
+                    <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <th>push()</th>
+                        <td>Adds an element to the end</td>
+                        <td>arr.push("Item")</td>
+                    </tr>
+    
+                    <tr>
+                        <th>pop()</th>
+                        <td>Removes the last element</td>
+                        <td>arr.pop()</td>
+                    </tr>
+                    <tr>
+                        <th>unshift()</th>
+                        <td>Adds an element to the beginning</td>
+                        <td>arr.unshift("Item")</td>
+                    </tr>
+    
+                    <tr>
+                        <th>shift()</th>
+                        <td> Removes the first element</td>
+                        <td>arr.shift()</td>
+                    </tr>
+                </table>
+    
+                <div class="example">let animals = ["Dog", "Cat", "Elephant"];<br>
+                    animals.push("Lion"); // Adds "Lion" at the end<br>
+                    animals.unshift("Tiger"); // Adds "Tiger" at the beginning<br>
+                    console.log(animals); // Output: ["Tiger", "Dog", "Cat", "Elephant", "Lion"]
+                </div>
+            </div>
+    
+            <div class="main-container">
+                <h2> 2. Iterating Over an Array</h2>
+                <p>There are multiple ways to loop through an array in JavaScript.</p>
+    
+                <h3> Using forEach()
+                </h3>
+                <div class="example">let names = ["Alice", "Bob", "Charlie"];<br>
+                    names.forEach(function(name) {
+                    console.log(name);<br>
+                    });
+    
+                </div>
+                <h3> Using map()
+                </h3>
+                <div class="example">let numbers = [1, 2, 3, 4];<br>
+                    let squaredNumbers = numbers.map(num => num * num);<br>
+                    console.log(squaredNumbers); // Output: [1, 4, 9, 16]
+    
+                </div>
+    
+            </div>
+    
+            <div class="main-container">
+                <h2>Adding Array Elements</h2>
+                <p>The easiest way to add a new element to an array is using the push() method:
+                </p>
+                <div class="example">const fruits = ["Banana", "Orange", "Apple"];<br>
+                    fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+                    </div>
+    
+                    <button onclick="myFunction()">Try it</button>
+                    <p id="demo"></p>
+    
+    
+            </div>
+            
+            <div class="main-container">
+                <h2>3. Searching and Filtering</h2>
+                
+    
+                <table>
+                    <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <th>indexOf()</th>
+                        <td>Returns the index of an element</td>
+                        <td>arr.indexOf("Item")</td>
+                    </tr>
+    
+                    <tr>
+                        <th>includes()</th>
+                        <td>Checks if an element exists</td>
+                        <td>arr.includes("Item")</td>
+                    </tr>
+                    <tr>
+                        <th>filter()</th>
+                        <td>Filters elements based on a condition</td>
+                        <td>arr.filter(condition)</td>
+                    </tr>
+    
+                </table>
+    
+                <div class="example">let numbers = [10, 20, 30, 40, 50];<br>
+                    let result = numbers.filter(num => num > 25);<br>
+                    console.log(result); // Output: [30, 40, 50]
+                    
+                </div>
+            </div>
+    
+            <div class="main-container">
+                <h2>4. Sorting and Reversing</h2>
+                
+    
+                <table>
+                    <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <th>sort()</th>
+                        <td>Sorts an array alphabetically or numerically</td>
+                        <td>arr.sort()</td>
+                    </tr>
+    
+                    <tr>
+                        <th>reverse()</th>
+                        <td>Reverses the array order</td>
+                        <td>	arr.reverse()</td>
+                    </tr>
+                   
+                </table>
+    <h3>Example:
+        </h3>
+                <div class="example">let fruits = ["Mango", "Banana", "Apple"];<br>
+                    fruits.sort();<br>
+                    console.log(fruits); // Output: ["Apple", "Banana", "Mango"]
+                    
+                    
+                </div>
+                <p>For numbers, we use a custom sort function:</p>
+                <div class="example">let numbers = [5, 20, 1, 100, 10];<br>
+                    numbers.sort((a, b) => a - b); // Ascending order<br>
+                    console.log(numbers); // Output: [1, 5, 10, 20, 100]
+                    
+                </div>
+            </div>
+    
+            <div class="main-container">
+                <h2> 5. Converting Arrays to Strings</h2>
+                
+    
+                <table>
+                    <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <th>join()</th>
+                        <td>Converts array elements to a string</td>
+                        <td>arr.join(", ")</td>
+                    </tr>
+    
+                    <tr>
+                        <th>toString()</th>
+                        <td>Converts array to a string</td>
+                        <td>arr.toString()</td>
+                    </tr>
+                   
+                </table>
+    <h3>Example:
+        </h3>
+                <div class="example">let words = ["Hello", "World"];<br>
+                    console.log(words.join(" ")); // Output: "Hello World"
+                    
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+    
+
+    <script src="./day8.js"></script>
+</body>
+
+</html>
