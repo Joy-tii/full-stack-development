@@ -4,56 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-  <link rel="stylesheet" href="./../calci.css">
+    <link rel="stylesheet" href="./../calci.css">
 </head>
 <body>
-   
-   <header> 
-    <img src="./../../../asset/Group 184.png" alt="logo">
-    
-    <h1> Online Calculator</h1>
-</header>
+    <header> 
+        <img src="./../../../asset/Group 184.png" alt="logo">
+        <h1>Online Calculator</h1>
+    </header>
     <div id="calculator">
-       <input type="text " id="display">
+        <div id="display-container">
+            <input type="text" id="input-display" readonly>
+            <input type="text" id="result-display" readonly>
+        </div>
         <div class="button-container">
-<button class="button" onclick="currentDisplay='';document.querySelector('#display').value = currentDisplay;">C</button>
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 1 ';document.querySelector('#display').value = currentDisplay;">1</button>  
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 2 ';document.querySelector('#display').value = currentDisplay;">2</button>  
-
-<button class="button" onclick="currentDisplay = currentDisplay +' + ';document.querySelector('#display').value = currentDisplay;">+</button>  
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 3 ';document.querySelector('#display').value = currentDisplay;">3</button>  
-
-<button class="button"onclick="currentDisplay = currentDisplay +' 4 ';document.querySelector('#display').value = currentDisplay;">4</button>   
-
-<button class="button" onclick="currentDisplay = currentDisplay +' - ';document.querySelector('#display').value = currentDisplay;">-</button>  
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 5 ';document.querySelector('#display').value = currentDisplay;">5</button> 
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 6 ';document.querySelector('#display').value = currentDisplay;">6</button>   
-
-<button class="button" onclick="currentDisplay = currentDisplay +' * ';document.querySelector('#display').value = currentDisplay;">*</button>   
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 7 ';document.querySelector('#display').value = currentDisplay;">7</button>   
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 8 ';document.querySelector('#display').value = currentDisplay;">8</button>
-
-<button class="button" onclick="currentDisplay = currentDisplay +' / ';document.querySelector('#display').value = currentDisplay;">/</button> 
-
-<button class="button" onclick="currentDisplay = eval(currentDisplay);document.querySelector('#display').value = currentDisplay;">=</button> 
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 9 ';document.querySelector('#display').value = currentDisplay;">9</button> 
-
-<button class="button" onclick="currentDisplay = currentDisplay +' 0 ';document.querySelector('#display').value = currentDisplay;">0</button>   
- 
-<button class="button" onclick="currentDisplay = currentDisplay +' . ';document.querySelector('#display').value = currentDisplay;">.</button>    
-  </div>
+            <button class="button" onclick="clearDisplay()">C</button>
+            <button class="button" onclick="deleteLast()">DEL</button>   
+            <button class="button" onclick="calculatePercentage()">%</button>  
+           
+            <button class="button" onclick="appendToDisplay('+')">+</button>  
+            <button class="button" onclick="appendToDisplay('1')">1</button>  
+            <button class="button" onclick="appendToDisplay('2')">2</button>  
+            
+            <button class="button" onclick="appendToDisplay('3')">3</button>  
+            <button class="button" onclick="appendToDisplay('-')">-</button> 
+            <button class="button" onclick="appendToDisplay('4')">4</button>   
+            
+            <button class="button" onclick="appendToDisplay('5')">5</button> 
+            <button class="button" onclick="appendToDisplay('6')">6</button>   
+            <button class="button" onclick="appendToDisplay('*')">*</button>   
+            <button class="button" onclick="appendToDisplay('7')">7</button>   
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+            <button class="button" onclick="appendToDisplay('9')">9</button> 
+           
+            <button class="button" onclick="appendToDisplay('/')">/</button> 
+           
+           <button class="button" onclick="appendToDisplay('.')">.</button> <button class="button" onclick="appendToDisplay('0')">0</button>   
+           
+            <button class="button" onclick="calculateResult()">=</button> 
+           
+            
+        </div>
     </div>
 
     <script>
-        let currentDisplay = '';document.querySelector('#display').value = currentDisplay;
+        let currentDisplay = '';
+        document.querySelector('#input-display').value = currentDisplay;
+
+        function appendToDisplay(value) {
+            currentDisplay += value;
+            document.querySelector('#input-display').value = currentDisplay;
+        }
+
+        function clearDisplay() {
+            currentDisplay = '';
+            document.querySelector('#input-display').value = currentDisplay;
+            document.querySelector('#result-display').value = '';
+        }
+
+        function deleteLast() {
+            currentDisplay = currentDisplay.slice(0, -1);
+            document.querySelector('#input-display').value = currentDisplay;
+        }
+
+        function calculateResult() {
+            try {
+                let result = eval(currentDisplay).toString();
+                document.querySelector('#result-display').value = result;
+            } catch (e) {
+                document.querySelector('#result-display').value = 'Error';
+            }
+        }
+
+        function calculatePercentage() {
+            try {
+                let result = (eval(currentDisplay) / 100).toString();
+                document.querySelector('#result-display').value = result;
+            } catch (e) {
+                document.querySelector('#result-display').value = 'Error';
+            }
+        }
     </script>
 </body>
 </html>
