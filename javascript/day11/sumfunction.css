@@ -1,6 +1,7 @@
 /* General body styling */
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -51,4 +52,9 @@ body {
 
 .calculate-btn:hover {
     background-color: #887d04;
+}
+.code{
+    border: 1px solid white;
+    padding: 20px;
+    margin: 40px;
 }
