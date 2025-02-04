@@ -1,0 +1,54 @@
+/* General body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(114deg, rgba(72, 157, 190, 0.79) 0.5%, rgba(53, 115, 139, 0.79) 50.25%, rgba(43, 94, 114, 0.79) 75.12%, rgba(34, 73, 88, 0.79) 100%);    font-family: Arial, sans-serif;
+}
+
+/* Card container */
+.container {
+    background: linear-gradient(114deg, rgba(72, 157, 190, 0.79) 0.5%, rgba(53, 115, 139, 0.79) 50.25%, rgba(43, 94, 114, 0.79) 75.12%, rgba(34, 73, 88, 0.79) 100%);    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Input field */
+.input-field {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Button styling */
+.calculate-btn {
+    width: 50%;
+    padding: 10px;
+    background-color: #aaaa01;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.calculate-btn:hover {
+    background-color: #887d04;
+}

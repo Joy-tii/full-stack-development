@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+    <link rel="stylesheet" href="./sumfunction.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="title">Sum Calculator</h2>
+        
+        <input id="numbersInput" 
+               type="text" 
+               placeholder="Enter numbers separated by commas" 
+               class="input-field">
+
+        <button onclick="calculateSum()" class="calculate-btn">
+            Calculate Sum
+        </button>
+    </div>
+
+    <script>
+        function calculateSum() {
+            let inputField = document.getElementById("numbersInput");
+            let values = inputField.value.split(",").map(num => parseFloat(num.trim()));
+            let sum = values.reduce((acc, curr) => acc + (isNaN(curr) ? 0 : curr), 0);
+            inputField.value = sum; // Display the sum in the input field
+        }
+    </script>
+
+</body>
+</html>
