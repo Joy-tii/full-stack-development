@@ -179,4 +179,54 @@ console.log("\n10 Constructor Function - person:");
 console.log(person1);
 
 
+//BONUS QUESTION
+
+//11. Array of objects and finding Highest Marks 
+
+const students = [
+    {name: "Sita" , age : 20, marks: { math : 90, science : 85, english : 78}},
+    {name: "gita" , age : 21, marks: { math : 80, science : 92, english : 88}},
+    {name: "Rita" , age : 19, marks: { math : 95, science : 80, english : 90}},
+];
+
+function calculateTotalMarks(student) {
+    let sum = 0;
+    for (let subject in student.marks) {
+        sum += student.marks[subject];
+    }
+    return sum;
+}
+
+let highestMarks = 0;
+let studentWithHighestMarks;
+
+for(const student of students) {
+    const totalMarks = calculateTotalMarks(student);
+    if (totalMarks > highestMarks) {
+        highestMarks = totalMarks;
+        studentWithHighestMarks = student;
+    }
+}
+
+console.log("\n11. Highest marks:");
+console.log("Student with highest mmarks:", studentWithHighestMarks);
+
+//12. Check if Object is empty
+
+function isObjectEmpty(obj){
+    return Object.keys(obj).length === 0;
+}
+
+const emptyObject = {};
+const nonEmptyObject = { a:1 };
+
+console.log("\n12. Is Object Empty");
+console.log("Empty Object:", isObjectEmpty(emptyObject));  // Output: true
+console.log("Non-empty object:" , isObjectEmpty(nonEmptyObject)); //Output: false
+
+
+
+
+
+
 
