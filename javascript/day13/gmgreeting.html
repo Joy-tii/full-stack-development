@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+    <style>
+        body{
+            background-image: url(./../../asset/pexels-pixabay-56617.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px;
+        }
+        button{
+            background-color:orangered ;
+            color: beige;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: rgb(254, 254, 254);">Hello Sir!!!</h1>
+ <h2 id="greet" style="color: rgb(255, 255, 255);"></h2>
+
+ <BUtton onclick="mywish()">Wishes</BUtton>
+
+ <script>
+   const accepted = setInterval(mygreeting , 2000);
+
+   function mygreeting(){
+    document.getElementById("greet").innerHTML += "Good Morning sir 🌄😊<br>"
+   }
+
+   function mywish (){
+    clearInterval(accepted);
+    alert("Thank you Jyoti 😊😂")
+   }
+
+ </script>
+
+</body>
+</html>

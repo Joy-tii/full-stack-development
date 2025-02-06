@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>your secret</title>
+    <style>
+        body{
+            background-image: url(./../../asset/DeWatermark.ai_1738874956862.png);
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px;
+            width: 100%;
+           box-sizing: border-box;
+
+           
+        }
+        button{
+            background-color:orangered ;
+            color: beige;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: rgb(0, 0, 0);">Here is Your Secrete!!! 🙊 <br>
+        If you don't want your secret to come out then click here within 5 seconds 🤐</h1>
+ <h2 id="greet" style="color: rgb(255, 255, 255);"></h2>
+
+ <BUtton onclick="no()">I Don't Want</BUtton>
+
+ <script>
+   const accepted = setTimeout(Yoursecret , 5000);
+
+   function Yoursecret(){
+    document.getElementById("greet").innerHTML += "Just Kidding😂😂😂😂😂 <br>"
+   }
+
+   function no (){
+    clearTimeout(accepted);
+    alert("Bach Gya 😂")
+   }
+
+ </script>
+
+</body>
+</html>
