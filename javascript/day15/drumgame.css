@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/042/192/577/non_2x/ai-generated-music-game-background-free-photo.jpg);
+box-sizing: border-box;
+ 
+    background-repeat: no-repeat;
+}
+
+.keys-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 100vh;
+}
+
+.key{
+    color: white;
+    font-size: 3rem;
+    border: 0.4rem solid black;
+    width: 5 rem;
+  margin: 1rem;
+  text-align: center;
+    padding: 20px;
+    border-radius: .5rem;
+    box-shadow: 0 0 1rem black;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.playing{
+    border: 4px solid yellow;
+}
