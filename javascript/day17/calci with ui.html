@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url(./../../asset/DeWatermark.ai_1739292947008.png);
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-repeat: no-repeat;
+        }
+
+        .calculator {
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            background-image: url(./../../asset/DeWatermark.ai_1739292947008.png);
+            border: 2px solid white;
+            box-shadow: 0 4px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            border: 1px solid rgb(1, 1, 86);
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ddd9d9;
+        }
+h1{
+    color: #290481;
+    font-size: 4rem;
+    background-color: #96e8f9;
+    padding: 5px;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+}
+    </style>
+</head>
+
+<body>
+    <h1>Modern Calculator</h1>
+    <div class="calculator">
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+
+        <div class="buttons">
+            <button class="btn" onclick="calculate('+')">+</button>
+            <button class="btn" onclick="calculate('-')">−</button>
+            <button class="btn" onclick="calculate('*')">×</button>
+            <button class="btn" onclick="calculate('/')">÷</button>
+        </div>
+
+        <p id="result"></p>
+
+
+        
+    <script>
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result = document.getElementById("result");
+
+            if (isNaN(num1) || isNaN(num2)) {
+                result.innerHTML = "Please enter valid numbers!";
+                return;
+            }
+
+            switch (operation) {
+                case "+":
+                    result.innerHTML = "Result: " + (num1 + num2);
+                    break;
+                case "-":
+                    result.innerHTML = "Result: " + (num1 - num2);
+                    break;
+                case "*":
+                    result.innerHTML = "Result: " + (num1 * num2);
+                    break;
+                case "/":
+                    result.innerHTML = num2 !== 0 ? "Result: " + (num1 / num2) : "Error: Cannot divide by zero!";
+                    break;
+                default:
+                    result.innerHTML = "Invalid Operation!";
+            }
+        }
+    </script>
+    </div>
+</body>
+
+</html>
