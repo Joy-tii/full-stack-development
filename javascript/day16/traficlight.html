@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            width: 100wh;
+            height: 100vh;
+background-size: cover;
+background-repeat: no-repeat;
+            background-image: url(./../../asset/blurred-city-street.jpg);
+            /* background-color: #f4f4f4; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .traffic-light {
+            width: 100px;
+            background: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .light {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 50%;
+            background-color: gray;
+        }
+
+        #red.light.active { background-color: red; }
+        #yellow.light.active { background-color: yellow; }
+        #green.light.active { background-color: rgb(4, 196, 199); }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        label,p{
+            color: rgb(14, 224, 252);
+        }
+
+        input{
+            color: rgb(0, 0, 0);
+        }
+        button{
+    border-radius: 10px;
+    border: 2px solid rgb(249, 248, 248);
+    padding: 5px;
+    background-color: rgb(62, 60, 57);
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+input{
+    width: 20%;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(239, 82, 82);
+}
+
+button:hover{
+    border-radius: 10px;
+    border: 2px solid rgb(246, 85, 85);
+    padding: 5px;
+    background-color: rgb(70, 68, 66);
+    font-size: 1rem;
+    color: rgb(210, 0, 0);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+
+}
+    </style>
+    
+</head>
+<body>
+    <h2>Traffic Light System</h2>
+    <label for="lightInput">Enter Traffic Light Color (Red, Yellow, Green): </label>
+    <input type="text" id="lightInput">
+    <button onclick="changeLight()">Change Light</button>
+    <p id="result"></p>
+
+    <div class="traffic-light">
+        <div id="red" class="light"></div>
+        <div id="yellow" class="light"></div>
+        <div id="green" class="light"></div>
+    </div>
+
+    <script>
+        function changeLight() {
+            let color = document.getElementById("lightInput").value.toLowerCase();
+            let result = document.getElementById("result");
+
+            // Reset all lights
+            document.getElementById("red").classList.remove("active");
+            document.getElementById("yellow").classList.remove("active");
+            document.getElementById("green").classList.remove("active");
+
+            switch (color) {
+                case "red":
+                    result.innerHTML = "STOP! The light is Red.";
+                    document.getElementById("red").classList.add("active");
+                    break;
+                case "yellow":
+                    result.innerHTML = "READY! The light is Yellow.";
+                    document.getElementById("yellow").classList.add("active");
+                    break;
+                case "green":
+                    result.innerHTML = "GO! The light is Green.";
+                    document.getElementById("green").classList.add("active");
+                    break;
+                default:
+                    result.innerHTML = "Invalid color! Enter Red, Yellow, or Green.";
+            }
+        }
+    </script>
+</body>
+</html>

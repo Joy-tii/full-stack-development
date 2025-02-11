@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Example</title>
+    <link rel="stylesheet" href="./switchcase.css">
+    
+</head>
+<body>
+   <div class="container">
+    <h2>Day of the Week</h2>
+    <label for="dayInput">Enter a number (1-7): </label>
+    <input type="number" id="dayInput" min="1" max="7">
+    <button onclick="checkDay()">Check Day</button>
+    <p id="result"></p>
+
+   </div>
+    <script>
+        function checkDay() {
+            let dayNumber = document.getElementById("dayInput").value;
+            let result = document.getElementById("result");
+
+            switch (parseInt(dayNumber)) {
+                case 1:
+                    result.innerHTML = "Monday";
+                    break;
+                case 2:
+                    result.innerHTML = "Tuesday";
+                    break;
+                case 3:
+                    result.innerHTML = "Wednesday";
+                    break;
+                case 4:
+                    result.innerHTML = "Thursday";
+                    break;
+                case 5:
+                    result.innerHTML = "Friday";
+                    break;
+                case 6:
+                    result.innerHTML = "Saturday";
+                    break;
+                case 7:
+                    result.innerHTML = "Sunday";
+                    break;
+                default:
+                    result.innerHTML = "Invalid input! Enter a number between 1 and 7.";
+            }
+        }
+    </script>
+</body>
+</html>
