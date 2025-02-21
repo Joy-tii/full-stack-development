@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Higher Order Functions
+    </title>
+</head>
+
+<body>
+
+
+    <!-- A higher-order function is a function that does one of the following:
+
+Takes another function as an argument.
+Returns another function as its result.
+
+function fun() {
+    console.log("Hello, World!");
+}
+function fun2(action) {
+    action();
+    action();
+}
+
+fun2(fun);
+
+
+CALLBACK FUNCTION-  A callback is a function passed as an argument to another function
+
+This technique allows a function to call another function
+
+A callback function can run after another function has finished
+
+
+MAP FUNCTION-  The map function is used to transform an array by applying a callback function to each element. It returns a new array.
+
+EX-  const n = [1, 2, 3, 4, 5];
+const square = n.map((num) => num * num);
+console.log(square);
+
+FILTER METHOD
+
+The filter function is used to create a new array containing elements that satisfy a given condition.
+
+EX-const n = [1, 2, 3, 4, 5];
+const even = n.filter((num) => num % 2 === 0);
+console.log(even);
+
+REDUCE METHOD
+
+The reduce function accumulates array elements into a single value based on a callback function.
+
+EX-const n = [1, 2, 3, 4, 5];
+const sum = n.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); 
+
+
+-->
+
+
+    <script>
+        function sum(p, q) {
+            return p + q;
+        }
+
+        function mul(p, q) {
+            return p * q;
+        }
+
+        function hof(fun1, fun2, a, b) {
+            console.log("first function is : ", fun1);
+            console.log("second function is : ", fun1);
+            console.log("first number is : ", a);
+            console.log("second number is : ", b);
+
+            return fun1(a, b) + fun2(a, b)
+        }
+
+        console.log(hof(sum, mul, 10, 20))
+
+
+        const n = [1, 2, 3, 4, 5];
+const square = n.map((num) => num * num);
+console.log(square);
+
+    </script>
+
+</body>
+
+</html>
