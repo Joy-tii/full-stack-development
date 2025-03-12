@@ -1,0 +1,253 @@
+.completed{
+    
+    color: #bababa;}
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   
+    background-image: url(./../../asset/top-view-office-stationery-with-notepad-pen.jpg);
+    width: 100vw;
+  
+    background-size: cover;
+  box-sizing: border-box;
+}
+
+li{
+   list-style-type: none; 
+   display: flex;
+   justify-content: space-around;
+}
+
+img{
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+}
+
+.header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+background-color: #343a40;
+width: 100vw;
+}
+h1{
+    color: white;
+}
+h2{
+    color: rgb(247, 74, 5);
+}
+
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-icon {
+    width: 20px;
+    height: 20px;
+   
+}
+
+.completed .task-icon {
+   
+  
+    width: 20px;
+    height: 20px;
+   
+}
+
+.delete {
+    margin-left: auto;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+
+input, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.delete:hover {
+    background-color: #c82333;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60vw;
+    margin-top: 100px;
+   margin-left: 300px;
+
+}
+
+.inputContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#taskInput {
+    flex-grow: 2; /* Makes task input take more space */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#todo-date {
+    flex-grow: 1; /* Takes less space than task input */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#addTaskBtn {
+    flex-grow: 0.5; /* Takes even less space */
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#addTaskBtn:hover {
+    background-color: #218838;
+}
+
+
+#loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+
+#loginForm input {
+    margin: 10px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#loginForm button {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#loginForm button:hover {
+    background: #218838;
+}
+/* Profile Section */
+.profile-section {
+    width: 20%;
+    background: #343a40;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-top: 100px;
+height: 400px;  
+border-radius: 0 10px 10px 0;
+}
+
+.profile-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+   
+}
+
+#logoutBtn{
+  position: fixed;
+  right: 0;
+  margin: 20px;
+}
+
+#motivation{
+    color: rgb(255, 106, 0);
+}
