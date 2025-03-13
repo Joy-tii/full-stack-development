@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (user) {
             profileName.innerText = user.name;
             profileEmail.innerText = user.email;
-            profileImage.src = user.profileImage || "./../../asset/profile-placeholder.png";
+            profileImage.src = user.profileImage || "./../../asset/blank-profile-picture-973460_1280.png";
         }
     }
 
