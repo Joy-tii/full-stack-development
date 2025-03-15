@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(./../../../asset/45203919_9024971.jpg);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 60vw;
+            background-image: url(./../../../asset/153685470_6a2e7975-caeb-4b7c-9bf1-674b76c112d9.jpg);
+           
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #333;
+        }
+        input {
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .weather-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .weather-box {
+            width: 50%;
+            padding: 20px;
+            background: white;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            display: none;
+            /* text-align: left; */
+        }
+        .weather-box img {
+            width: 50px;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        #weatherIcon {
+            width: 70px;
+            height: 70px;
+            margin-top: 10px;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .history-box {
+            width: 50%;
+            height: auto;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            margin-left: 10px;
+        }
+        .history-box h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .history-box ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .history-box li {
+            background: white;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .history-box li:hover {
+            background: #d4d4d4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Weather App</h2>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getWeather()">Get Weather</button>
+        <p class="error" id="errorMessage"></p>
+        <div id="spinner" class="spinner"></div>
+
+        <div class="weather-container">
+            <!-- Weather Information Box -->
+            <div class="weather-box" id="weatherBox">
+                <h3 id="cityName"></h3>
+                <img id="weatherIcon" src="" alt="Weather Icon">
+                <p id="temperature"></p>
+                <p id="weatherCondition"></p>
+            </div>
+
+            <!-- Recent Searches Box -->
+            <div class="history-box">
+                <h3>Recent Searches</h3>
+                <ul id="searchHistory"></ul>
+            </div>
+        </div>
+      
+    </div>
+
+    <script>
+        function getWeatherIcon(condition) {
+            if (condition.includes("rain")) {
+                return "./../../../asset/rainy-day(2).png";
+            } else if (condition.includes("cloud")) {
+                return "./../../../asset/cloudy-day.png";
+            } else if (condition.includes("clear") || condition.includes("sun")) {
+                return "./../../../asset/sun.png";
+            } else {
+                return "./../../../asset/cloudy-day.png";
+            }
+        }
+
+        async function getWeather(cityName = null) {
+            const apiKey = 'd474f951e70e6e793478e0ec8ef4f656';
+            const cityInput = document.getElementById("cityInput");
+            const city = cityName || cityInput.value.trim();
+            const errorMessage = document.getElementById("errorMessage");
+            const weatherBox = document.getElementById("weatherBox");
+            const spinner = document.getElementById("spinner");
+
+            if (!city) {
+                errorMessage.innerText = "Please enter a city name.";
+                return;
+            }
+            errorMessage.innerText = "";
+            spinner.style.display = "block";
+            weatherBox.style.display = "none";
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.cod !== 200) {
+                    errorMessage.innerText = data.message;
+                    return;
+                }
+
+                document.getElementById("cityName").innerText = `Weather in ${data.name}`;
+                document.getElementById("temperature").innerText = `Temperature: ${data.main.temp}°C`;
+                document.getElementById("weatherCondition").innerText = `Condition: ${data.weather[0].description}`;
+
+                const weatherIcon = getWeatherIcon(data.weather[0].description.toLowerCase());
+                document.getElementById("weatherIcon").src = weatherIcon;
+
+                weatherBox.style.display = "block";
+
+                saveToHistory(data.name, data.main.temp, data.weather[0].description);
+
+            } catch (error) {
+                errorMessage.innerText = "Error fetching data. Check console.";
+                console.error("API Fetch Error:", error);
+            } finally {
+                spinner.style.display = "none";
+            }
+        }
+
+        function saveToHistory(city, temp, condition) {
+            let history = JSON.parse(localStorage.getItem("weatherHistory")) || [];
+
+            history.unshift({ city, temp, condition });
+
+            if (history.length > 5) {
+                history.pop();
+            }
+
+            localStorage.setItem("weatherHistory", JSON.stringify(history));
+            displayHistory();
+        }
+
+        function displayHistory() {
+            const history = JSON.parse(localStorage.getItem("weatherHistory")) || [];
+            const historyList = document.getElementById("searchHistory");
+
+            historyList.innerHTML = history.map(entry => 
+                `<li onclick="getWeather('${entry.city}')">${entry.city}: ${entry.temp}°C, ${entry.condition}</li>`
+            ).join("");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            displayHistory();
+        });
+    </script>
+
+</body>
+</html>
