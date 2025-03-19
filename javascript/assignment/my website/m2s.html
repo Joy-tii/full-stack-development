@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modesty Meets Style</title>
+  <link rel="stylesheet" href="./m2s.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav>
+      <img src="./../../../asset/logo for m2s.png" alt="logo" class="logo">
+      <div class="loco-search">
+        
+        <div class="search">
+          <img src="./../../../asset/search.png" alt="search" id="search">
+          <input type="text" placeholder="Search for products, brands and more">
+        </div>
+      </div>
+      <div class="icon-container">
+        <div class="location-container">
+            <img src="./../../../asset/location.png" alt="location" id="location-icon">
+            <p id="location-text">Location</p>
+          </div>
+        <div class="fusion-content">
+          <img src="./../../../asset/filter.png" alt="filter" id="fusion-icon">
+          <p>Fusion</p>
+        </div>
+        <div class="heart-content">
+          <img src="./../../../asset/heart-regular (1).svg" alt="heart" id="heart-icon">
+          <p>Wishlist</p>
+        </div>
+        <div class="cart-content">
+          <img src="./../../../asset/cart.png" alt="cart" id="cart-icon">
+          <p>Cart</p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero / Banner -->
+
+    <section class="hero">
+        <div class="collage traditional">
+          <img src="./../../../asset/trad1.svg" alt="Traditional Dress">
+          <img src="./../../../asset/trad2.svg" alt="Traditional Dress">
+          <img src="./../../../asset/trad3.svg" alt="Traditional Dress">
+          <img src="./../../../asset/trad4.svg" alt="Traditional Dress">
+         
+        </div>
+        <div class="hero-content">
+            <h1>Modesty Meets Style</h1>
+            <p>Where Tradition Fuses with Modern Fashion</p>
+            <button>Explore Collection</button>
+          </div>
+
+    <div class="collage modern">
+        <img src="./../../../asset/mod1.png" alt="Modern Dress">
+        <img src="./../../../asset/mod2.png" alt="Modern Dress">
+        <img src="./../../../asset/mod3.png" alt="Modern Dress">
+        <img src="./../../../asset/mod4.png" alt="Modern Dress">
+       
+      </div>
+    </section>
+  </header>
+
+<!-- Fusion Overlay (Hidden Initially) -->
+<div id="fusion-overlay" class="fusion-overlay">
+    <div class="fusion-box">
+      <span class="close-btn" onclick="closeFusion()">✖</span>
+      <h2>Choose Your Fusion Style</h2>
+  
+      <div class="fusion-step">
+        <label for="tradition-select">🌸 Traditional Base:</label>
+        <select id="tradition-select">
+          <option value="">-- Select Tradition --</option>
+          <option value="chikankari">Chikankari (UP / Lucknow)</option>
+          <option value="zardosi">Zardosi (Delhi / Rajasthan)</option>
+          <option value="aari">Aari (Kashmir / Gujarat)</option>
+          <option value="banjara">Banjara (Tribal / Telangana)</option>
+          <option value="gota">Gota Patti (Rajasthan)</option>
+          <option value="handloom">Handloom (Bihar / Bengal / Odisha)</option>
+          <option value="silk">Silk (Kanchipuram / Banarasi / Assam)</option>
+        </select>
+      </div>
+  
+      <div class="fusion-step">
+        <label for="western-select">👗 Western Style:</label>
+        <select id="western-select">
+          <option value="">-- Select Western Style --</option>
+          <option value="aline">A-line Dress</option>
+          <option value="crop">Crop Top & Skirt</option>
+          <option value="jacket">Jacket</option>
+          <option value="gown">Evening Gown</option>
+          <option value="playsuit">Playsuit / Jumpsuit</option>
+          <option value="trousers">Trousers / Palazzos</option>
+          <option value="formal">Formal / Office Wear</option>
+        </select>
+      </div>
+  
+      <button onclick="showFusionResults()">Show Fusion</button>
+    </div>
+  </div>
+  
+  <!-- Fusion Selection Section -->
+  <section class="fusion-selection">
+    <h2>Select Your Fusion Style</h2>
+    <div class="fusion-options">
+      
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.14.46 - A stylish fusion dress featuring traditional Lucknowi Chikankari embroidery on a modern western silhouette. The dress is a white knee-length, sleevele.webp" alt="Chikankari x Western">
+        <h3>Chikankari x Western Dress</h3>
+        <p>Elegant Lucknowi embroidery on chic western silhouettes.</p>
+      </div>
+  
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.29.12 - A luxurious modern evening gown with royal handcrafted zardosi embroidery in gold and red, perfect for a modern queen. The gown is floor-length, elega.webp">
+        <h3>Zardosi x Modern Gowns</h3>
+        <p>Royal handcrafted zardosi on evening gowns for modern queens.</p>
+      </div>
+  
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.29.25 - A stylish bohemian outfit blended with colorful traditional Banjara embroidery and mirror work. The dress features tribal patterns and vibrant hues li.webp" alt="Banjara x Boho">
+        <h3>Banjara x Boho</h3>
+        <p>Tribal banjara patterns blended with free-spirited bohemian styles.</p>
+      </div>
+  
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.29.29 - A contemporary chic outfit featuring golden gota patti embroidery on a modern western silhouette. The dress is a fusion of traditional Indian craft an.webp" alt="Gota Patti x Contemporary">
+        <h3>Gota Patti x Contemporary</h3>
+        <p>Golden gota accents fused with contemporary silhouettes.</p>
+      </div>
+  
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.31.21 - A modern western-style jumpsuit beautifully adorned with vibrant traditional Phulkari embroidery. The outfit features bright floral patterns in pink, .webp" alt="Phulkari x Jumpsuit">
+        <h3>Phulkari x Jumpsuit</h3>
+        <p>Vibrant Phulkari embroidery on a western-style jumpsuit.</p>
+      </div>
+  
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.31.12 - A contemporary elegant dress featuring traditional Kashmiri Kashida embroidery. The dress is flowy with pastel tones, covered in intricate floral thre.webp" alt="Kashmiri x Modern Dress">
+        <h3>Kashmiri x Modern Dress</h3>
+        <p>Elegant Kashida embroidery in a flowing contemporary dress.</p>
+      </div>
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.55.22 - A modern elegant cocktail dress beautifully adorned with traditional mirror work embroidery. The dress blends vibrant mirror work patterns with a slee.webp" alt="Mirror Work x Cocktail Dress">
+        <h3>Mirror Work x Cocktail Dress</h3>
+        <p>Dazzling traditional mirror work on a sleek modern cocktail dress.</p>
+      </div>
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.55.28 - A modern western-style long jacket beautifully designed with intricate Kantha embroidery patterns. The jacket is open front, knee-length, and crafted .webp" alt="Kantha x Western Jacket">
+        <h3>Kantha x Western Jacket</h3>
+        <p>Intricate Kantha embroidery beautifully designed on a stylish western jacket.</p>
+      </div>
+      
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.55.32 - A modern elegant dress beautifully blended with rich Bandhani tie-dye patterns. The dress is sleeveless with a flowy A-line cut, vibrant red and white.webp" alt="Parsi Gara x Elegant Dress">
+        <h3>Parsi Gara x Elegant Dress</h3>
+        <p>Exquisite Parsi Gara floral embroidery in a flowing contemporary dress.</p>
+      </div>
+      <div class="fusion-card" onclick="selectFusion(this)">
+        <img src="./../../../asset/DALL·E 2025-03-19 16.55.39 - A trendy western crop top beautifully combined with colorful traditional Ajrakh block print patterns. The crop top is fitted, with short sleeves, and .webp" alt="Ajrakh x Crop Top">
+        <h3>Ajrakh x Crop Top</h3>
+        <p>Rich Ajrakh block prints styled on a trendy modern crop top.</p>
+      </div>
+      
+  
+    </div>
+  </section>
+  
+
+  <!-- Product Section -->
+  <section class="product-section">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="./../../../asset/chickenkari.jpeg" alt="Product">
+        <h3>Chikankari Kurti</h3>
+        <p>₹1,299</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./../../../asset/zardosi.jpeg" alt="Product">
+        <h3>Zardosi Gown</h3>
+        <p>₹2,999</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./../../../asset/aari tunic.jpeg" alt="Product">
+        <h3>Aari Tunic</h3>
+        <p>₹1,899</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./../../../asset/Banjara Lehenga.jpeg" alt="Product">
+        <h3>Banjara Lehenga</h3>
+        <p>₹3,499</p>
+        <button>Add to Cart</button>
+      </div>
+    
+      <div class="product-card">
+        <img src="./../../../asset/gota patti.webp" alt="Product">
+        <h3>Gota Patti Suit</h3>
+        <p>₹1,899</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Modesty Meets Style. All rights reserved.</p>
+  </footer>
+
+  <SCript src="./m2s.js"></SCript>
+</body>
+
+</html>

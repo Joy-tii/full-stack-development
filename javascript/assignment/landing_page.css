@@ -9,6 +9,10 @@ header {
     background-color: #092443;
     padding: 1rem;
 }
+.logo{
+color: #ffffff;
+font-size: 25px;
+}
 
 nav ul {
     list-style: none;
