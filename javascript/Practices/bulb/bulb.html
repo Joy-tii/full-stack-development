@@ -1,0 +1,47 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bulb on - off in js</title>
+        <style>
+
+            body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+           button{
+            padding: 5px;
+            border: 2px solid orange;
+            color: rgb(0, 61, 17);
+            background-color: rgb(243, 243, 243);
+            margin: 20px;
+          
+            border-radius: 5px;
+           }
+           p{
+            color: red;
+            font-size: 40px;
+           
+           }
+        </style> 
+        
+
+    </head>
+<body>
+
+<p>Enter into the room ... <img src="./../../../asset/icons8-enter-48.png" alt=""></p>
+
+<button onclick="document.getElementById('myImage').src='./../../../asset/room_with_light_on.webp'">Turn on the light</button>
+
+<img id="myImage" src="./../../../asset/room_light_off_with_bulb_off.png" style="width:100vw">
+
+<button onclick="document.getElementById('myImage').src='./../../../asset/room_light_off_with_bulb_off.png'">Turn off the light</button>
+<p>Exist from the room ... <img src="./../../../asset/icons8-exit-48.png" alt=""></p>
+</body>
+</html>
