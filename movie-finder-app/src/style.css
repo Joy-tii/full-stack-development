@@ -1,0 +1,284 @@
+/* ========== Global Reset ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  /* ========== Header ========== */
+  .header-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 10;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .logo {
+    font-size: 28px;
+    background: linear-gradient(45deg, #ff6b6b, #ffb84d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ff6b6b;
+  }
+  
+  /* Search Bar */
+  .search-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 20px;
+  }
+  
+  .search-container input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .search-container button {
+    background: #ff6b6b;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  /* ========== Hero Section ========== */
+  .hero {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .hero-container {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .hero-slide {
+    min-width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .hero-content h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    background: linear-gradient(45deg, #ff6b6b, #ffb84d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hero-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .hero-buttons button {
+    background: #ff6b6b;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    color: #fff;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .hero-buttons button:hover {
+    background: #ffb84d;
+  }
+  
+  /* ========== Movie Section (Search + Similar) ========== */
+  #movie-section {
+    margin-top: 120px; /* to avoid overlap by header */
+    padding: 20px;
+  }
+  
+  #movie-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #ffb84d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Container holding Searched Movie & Similar Movies side-by-side */
+  .search-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  /* Searched Movie Card */
+  #searched-movie {
+    flex: 0 0 300px; /* Fixed width for searched movie */
+    background-color: #242424;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  #searched-movie img {
+    width: 100%;
+    height: 350px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Similar Movies Section */
+  #similar-movies {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1; /* Takes up remaining space */
+  }
+  
+  #similar-movies h3 {
+    font-size: 18px;
+    margin: 0;
+    background: linear-gradient(45deg, #ff6b6b, #ffb84d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Horizontal list for Similar Movies */
+  .movies-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  /* ========== Shared Movie Card Styles ========== */
+  .movie-card {
+    min-width: 200px;
+    background-color: #242424;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* General movie card image styling */
+  .movie-card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Make similar movie card images fixed height (350px) to match searched movie */
+  #similar-movies .movie-card img {
+    height: 350px;
+  }
+  
+  /* Movie card text */
+  .movie-card h3 {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+    background: linear-gradient(45deg, #ff6b6b, #ffb84d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .movie-card p {
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 4px;
+  }
+  
+  /* ========== Other Sections (Favorites, Watchlist) ========== */
+  section {
+    padding: 15px 20px;
+    margin-top: 20px;
+  }
+  
+  section h2 {
+    font-size: 22px;
+    background: linear-gradient(45deg, #ff6b6b, #ffb84d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+  
+  .movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  /* ========== Footer ========== */
+  footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 15px;
+    color: #aaa;
+    margin-top: 20px;
+  }
+  
