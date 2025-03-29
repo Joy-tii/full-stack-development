@@ -74,3 +74,64 @@ function displaySimilarMovies(movies) {
         `)
         .join("");
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    updateCartCount();
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", function () {
+            let product = this.closest(".product");
+            let item = {
+                id: product.dataset.id,
+                name: product.dataset.name,
+                price: parseInt(product.dataset.price)
+            };
+            cart.push(item);
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            showPopup("Item added to cart!");
+            updateCartCount();
+        });
+    });
+
+    function updateCartCount() {
+        document.getElementById("cart-count").textContent = cart.length;
+    }
+
+    function showPopup(message) {
+        let popup = document.getElementById("popup");
+        popup.textContent = message;
+        popup.style.display = "block";
+        setTimeout(() => popup.style.display = "none", 2000);
+    }
+
+    if (document.getElementById("cart-items")) {
+        let cartItems = document.getElementById("cart-items");
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+            let div = document.createElement("div");
+            div.innerHTML = `${item.name} - ₹${item.price} <button onclick="removeItem(${index})">Remove</button>`;
+            cartItems.appendChild(div);
+            subtotal += item.price;
+        });
+
+        let tax = subtotal * 0.05;
+        let discount = subtotal * 0.1;
+        let total = subtotal + tax + 50 - discount;
+
+        document.getElementById("subtotal").textContent = subtotal;
+        document.getElementById("tax").textContent = tax.toFixed(2);
+        document.getElementById("discount").textContent = discount.toFixed(2);
+        document.getElementById("total").textContent = total.toFixed(2);
+    }
+});
+
+function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload();
+}

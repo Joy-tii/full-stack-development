@@ -52,6 +52,18 @@
   nav a:hover {
     color: #ff6b6b;
   }
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      height: auto;
+    }
+    .icon-container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
   
   /* Search Bar */
   .search-container {
