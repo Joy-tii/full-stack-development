@@ -108,22 +108,34 @@
 </head>
 
 <body>
-    <!-- Password screen -->
-    <div id="password-screen">
+      <!-- Set Password Screen (Only for first-time users) -->
+      <div id="set-password-screen" style="display: none; position: fixed; width: 100%; height: 100%; justify-content: center; align-items: center; background: #021E3E; color: white; text-align: center;">
         <div class="password-box">
-            <h2>Enter Password</h2>
+            <h2>Set Your Password</h2>
+            <div class="password-container">
+                <input type="password" id="new-password-input" placeholder="Enter new password">
+                <button class="eye-btn" onclick="togglePassword('new-password-input', this)">👁</button>
+            </div>
+            <button onclick="setPassword()">Set Password</button>
+        </div>
+    </div>
+    <!-- Password Entry Screen -->
+    <div id="password-screen" style="display: none;">
+        <div class="password-box">
+            <h2>Enter Your Password</h2>
             <div class="password-container">
                 <input type="password" id="password-input" placeholder="Enter password">
-                <button class="eye-btn" onclick="togglePassword()">👁</button>
+                <button class="eye-btn" onclick="togglePassword('password-input', this)">👁</button>
             </div>
-
             <button onclick="checkPassword()">Submit</button>
+            <button onclick="resetPassword()" style="margin-top: 10px; background: red;">Reset Password</button>
+            <!-- <div style="color: white; margin: 10px;">☆.𓋼𓍊 𓆏 𓍊𓋼𓍊.☆ ⋆౨ৎ˚⟡˖ ࣪</div> -->
             <div id="password-error" class="password-error">Incorrect password. Try again.</div>
-
-            <div style="color: white; margin: 10px;">☆.𓋼𓍊 𓆏 𓍊𓋼𓍊.☆ ⋆౨ৎ˚⟡˖ ࣪</div>
+         
         </div>
     </div>
 
+    <div style="color: white; margin: 10px;">☆.𓋼𓍊 𓆏 𓍊𓋼𓍊.☆ ⋆౨ৎ˚⟡˖ ࣪</div>
     <!-- Main content -->
     <div id="content">
         <div class="main-head">
